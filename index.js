@@ -1,9 +1,11 @@
 console.log('It works!')
-const button = document.querySelector('button')
+const form = document.getElementById('form1')
 
-const updateText = function(){
-	const header2 = document.querySelector('h2.header')
-	header2.textContent = 'still is'
+const updateText = function(event){
+	event.preventDefault()
+	const header1 = document.querySelector('h1.header')
+	header1.textContent = document.getElementById('form1').elements['favChris'].value
+	form.reset()	
 }
 
-button.addEventListener('click',updateText)
+form.addEventListener('submit',updateText)
