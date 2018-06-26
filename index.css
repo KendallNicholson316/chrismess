@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Anton|Cabin');
 
-body {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+h1 {
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+#movies{
+	list-style: circle;
+}
+
+span1{
+	font-family: 'Anton', Helvetica, Arial, sans-serif;
+	color: red;
+}
+
+span2{
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }

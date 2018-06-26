@@ -7,15 +7,18 @@ const updateMovieList = function(ev) {
 	const movieName = f.movieName.value
 	const chris = f.chris.value
 
-	const itemMovieName = document.createElement('li')
-	itemMovieName.textContent = movieName
+	const movieNameSpan = document.createElement('span1')
+	movieNameSpan.textContent = movieName
 
-	const itemChris = document.createElement('li')
-	itemChris.textContent = chris
+	const chrisSpan = document.createElement('span2')
+	chrisSpan.textContent = ' - ' +  chris
+
+	const item = document.createElement('li')
+	item.appendChild(movieNameSpan)
+	item.appendChild(chrisSpan)
 
 	const list = document.querySelector('#movies')
-	list.appendChild(itemMovieName)
-	list.appendChild(itemChris)
+	list.appendChild(item)
 
 	f.reset()
 }
