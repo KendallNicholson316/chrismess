@@ -1,17 +1,17 @@
-const form = document.querySelector('form#flickForm')
+const form = document.querySelector('form#movieForm')
 
-const changeHeading = function(ev) {
+const updateMovieList = function(ev) {
   ev.preventDefault()
   const f = ev.target
 
-  const flickName = f.flickName.value
+  const movieName = f.movieName.value
   const item = document.createElement('li')
-  item.textContent = flickName
+  item.textContent = movieName
 
-  const list = document.querySelector('#flicks')
+  const list = document.querySelector('#movies')
   list.appendChild(item)
 
   f.reset()
 }
 
-form.addEventListener('submit', changeHeading)
+form.addEventListener('submit', updateMovieList)
