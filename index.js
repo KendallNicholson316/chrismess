@@ -1,17 +1,23 @@
 const form = document.querySelector('form#movieForm')
 
 const updateMovieList = function(ev) {
-  ev.preventDefault()
-  const f = ev.target
+	ev.preventDefault()
+	const f = ev.target
 
-  const movieName = f.movieName.value
-  const item = document.createElement('li')
-  item.textContent = movieName
+	const movieName = f.movieName.value
+	const chris = f.chris.value
 
-  const list = document.querySelector('#movies')
-  list.appendChild(item)
+	const itemMovieName = document.createElement('li')
+	itemMovieName.textContent = movieName
 
-  f.reset()
+	const itemChris = document.createElement('li')
+	itemChris.textContent = chris
+
+	const list = document.querySelector('#movies')
+	list.appendChild(itemMovieName)
+	list.appendChild(itemChris)
+
+	f.reset()
 }
 
 form.addEventListener('submit', updateMovieList)
