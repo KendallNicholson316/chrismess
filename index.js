@@ -4,10 +4,12 @@ function createItem(f){
 	const movieName = f.movieName.value
     const chris = f.chris.value
 	     
-    const movieNameSpan = document.createElement('span1')
+    const movieNameSpan = document.createElement('span')
+	movieNameSpan.classList.add('name')
     movieNameSpan.textContent = movieName
      
-    const chrisSpan = document.createElement('span2')
+    const chrisSpan = document.createElement('span')
+	chrisSpan.classList.add('chris')
     chrisSpan.textContent = ' - ' +  chris
  
     const item = document.createElement('li')
