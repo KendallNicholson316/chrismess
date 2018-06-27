@@ -1,5 +1,6 @@
 class App{
 	constructor(){
+		this.movieList = []
 		const form = document.querySelector('form#movieForm')
 		form.addEventListener('submit', (ev) => {
 			ev.preventDefault()
@@ -27,7 +28,7 @@ class App{
 		return item;
 	}
 
-	updateMovieList(ev) {
+	updateMovieList(ev) {	
 		const f = ev.target
 		
 		const movie = {
@@ -35,8 +36,11 @@ class App{
 			chris: f.chris.value,
 		}
 
+		this.movieList.push(movie)
+
 		const list = document.querySelector('#movies')
 		list.appendChild(this.createItem(movie))
+		
 
 		f.reset()
 		f.movieName.focus()
