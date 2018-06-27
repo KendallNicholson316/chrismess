@@ -7,11 +7,23 @@ class App{
 		})	
 	}
 
+	createSpan(name, value){
+		const span = document.createElement('span')
+		span.classList.add(name)
+		span.textContent = value
+		return span
+	}
+	createItem(movie){
+		const item = document.createElement('li')
+		item.classList.add('movie')
 
-
-
-	createItem(f){
-		const movieName = f.movieName.value
+		const keys = Object.keys(movie)
+		
+		keys.forEach((keyName) => {
+			const span = this.createSpan(keyName, movie[keyName])
+			item.appendChild(span)
+		})
+/*		const movieName = f.movieName.value
     	const chris = f.chris.value
 	     
     	const movieNameSpan = document.createElement('span')
@@ -25,16 +37,23 @@ class App{
     	const item = document.createElement('li')
     	item.appendChild(movieNameSpan)
     	item.appendChild(chrisSpan)
-
+*/
+		
 		return item;
 	}
 
 	updateMovieList(ev) {
-//		ev.preventDefault()
 		const f = ev.target
+		
+		const movie = {
+			name: f.movieName.value,
+			chris: f.chris.value,
+		}
+		
+//		const item = this.createItem(movie)
 
 		const list = document.querySelector('#movies')
-		list.appendChild(this.createItem(f))
+		list.appendChild(this.createItem(movie))
 
 		f.reset()
 		f.movieName.focus()
