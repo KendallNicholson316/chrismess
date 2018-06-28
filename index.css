@@ -70,6 +70,7 @@ form{
 	position: absolute;
 	right: 0;
 	margin-right: 6vw; 
+	border-radius: 25%;
 }
 
 .fav{
@@ -82,4 +83,5 @@ form{
 	position: absolute; 
 	right: 0;
 	margin-right: 2vw;
+	border-radius: 25%;
 }
