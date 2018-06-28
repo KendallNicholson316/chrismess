@@ -31,11 +31,6 @@ class App{
 			}
 			i++;
         })
-	/*	button.addEventListener('unclick', (ev) => {
-			ev.preventDefault()
-			this.unfavorite(button)
-		})
-*/
         return button
     }
 	
