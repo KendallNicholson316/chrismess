@@ -10,10 +10,6 @@ class App{
 			this.handleSubmit(ev)
 		})	
 	}
-
-	unfavorite(button){
-		button.textContent ='♡' 
-	}
 	
 	favorite(movie,button){
 		if(!movie.favorite){
