@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=Anton|Cabin');
 
-ul li:nth-child(odd) {
+.movie:nth-child(odd) {
   background: #cec7c7;
 }
 
-ul li:hover {
+.movie:hover {
   background: #ddd;
 }
 
@@ -40,16 +40,23 @@ input {
 
 
 
+
+form > div{
+	display: inline-flex;
+	width: 100%;
+	align-items: stretch;
+}
+
 form{
 	margin: 0 auto;
 	text-align: center; 
 }
 #movies{
-	margin-left: 2vw;
-	list-style: circle;
-	font-size: 4vw;
+	list-style: none;
+	margin: 1rem;
+	padding:0;
+	border: 1px solid #eee;	
 }
-
 .name{
 	font-family: 'Anton', Helvetica, Arial, sans-serif;
 	font-size: 4vw;
@@ -57,35 +64,36 @@ form{
 	margin: 0;
 }
 
+.movie {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .chris{
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
-	
+	display: block;
 	font-size: 2vw;
-	margin: 0;
 }
 
-.close{
-	width: 4%;
-	padding: 0px;
-	color: black;
-	text-align: center;
-	font-size: 3vw;
-	background: #d9d9d9;
-	position: absolute;
-	right: 0;
-	margin-right: 6vw; 
-	border-radius: 25%;
+.info{
+	flex: 1;
 }
 
-.fav{
-	width: 4%;
-	padding: 0px;
-	color: red;
-	text-align:left;
-	font-size: 3vw;
-	background: #d9d9d9;
-	position: absolute; 
-	right: 0;
-	margin-right: 2vw;
-	border-radius: 25%;
+.utility{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+button.close{
+	padding: 1vw 1vw;
+	font-size:3vw;
+}
+
+button.fav{
+	text: red;
+	padding: 1vw 1vw;
+	font-size:3vw;
 }

@@ -21,6 +21,7 @@ class App{
 	
 	createUtilities(movie, item){
 		const div = document.createElement('div')
+		div.classList.add('utility')
 
 		div.appendChild(this.createRemoveButton(movie, item))		
 	
@@ -70,6 +71,8 @@ class App{
 
 	createProps(movie, item){
 		const div = document.createElement('div')
+		div.classList.add('info')
+
 		const keys = Object.keys(movie)
 
         keys.forEach((keyName) => {
