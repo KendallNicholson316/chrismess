@@ -10,16 +10,10 @@ class App{
 	
 	remove(ev,movie){
 		const item = ev.target.parentElement
-		debugger
 		const i = this.movieList.indexOf(movie)
         this.movieList.splice(i,1)
 		
-//		const item = ev.target.parentElement
 		item.parentElement.removeChild(item)
-		debugger
-//		const i = this.movieList.indexOf(item)
-//		this.movieList.splice(i,1)
-//		debugger
 	}
 
 	createRemoveButton(movie){
