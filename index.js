@@ -7,19 +7,35 @@ class App{
 			this.updateMovieList(ev)
 		})	
 	}
+
+	unfavorite(button){
+		button.textContent ='♡' 
+	}
 	
 	favorite(button){
         button.textContent = '🖤'
     }
 
     createFavoriteButton(){
+		let i =0;
         const button = document.createElement('button')
         button.classList.add('fav')
         button.textContent ='♡'
         button.addEventListener('click', (ev) => {
             ev.preventDefault()
-            this.favorite(button)
+			if(i%2==0){
+  	        	this.favorite(button)
+			}
+			else{
+				this.unfavorite(button)
+			}
+			i++;
         })
+	/*	button.addEventListener('unclick', (ev) => {
+			ev.preventDefault()
+			this.unfavorite(button)
+		})
+*/
         return button
     }
 	
