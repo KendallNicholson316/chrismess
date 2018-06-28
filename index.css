@@ -4,16 +4,40 @@
 h1 {
 	text-align: center;
 	font-family: 'Lato', Helvetica, Arial, sans-serif;
-	font-size: 10vw;
+	font-size: 8vw;
 	margin:0;
 	margin-bottom: 2vw;
 }
+
+input {
+  margin: 0;
+  border-style: solid;
+  border-radius: 0;
+  width: 25%;
+  padding: 1vw;
+  font-size: 2vw;
+}
+
+#addbtn {
+  padding: 1vw;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+
 
 form{
 	margin: 0 auto;
 	text-align: center; 
 }
 #movies{
+	margin-left: 2vw;
 	list-style: circle;
 	font-size: 4vw;
 }
@@ -33,13 +57,25 @@ form{
 }
 
 .close{
+	width: 4%;
+	padding: 0px;
+	color: black;
+	text-align: center;
+	font-size: 3vw;
+	background: #d9d9d9;
 	position: absolute;
 	right: 0;
-	margin-right: 3vw; 
+	margin-right: 6vw; 
 }
 
 .fav{
+	width: 4%;
+	padding: 0px;
+	color: red;
+	text-align:left;
+	font-size: 3vw;
+	background: #d9d9d9;
 	position: absolute; 
 	right: 0;
-	
+	margin-right: 2vw;
 }
