@@ -15,8 +15,14 @@ class App{
 		button.textContent ='♡' 
 	}
 	
-	favorite(button){
-        button.textContent = '🖤'
+	favorite(movie,button){
+		if(!movie.favorite){
+			button.textContent = '🖤'
+		}
+		else{
+			button.textContent ='♡'
+		}
+		movie.favorite = !movie.favorite
     }
 	
 	createUtilities(movie, item){
@@ -25,26 +31,16 @@ class App{
 
 		div.appendChild(this.createRemoveButton(movie, item))		
 	
-		div.appendChild(this.createFavoriteButton())
+		div.appendChild(this.createFavoriteButton(movie))
 		
 		return div;
 	}
 	
-    createFavoriteButton(){
-		let i =0;
+    createFavoriteButton(movie){
         const button = document.createElement('button')
         button.classList.add('fav')
         button.textContent ='♡'
-        button.addEventListener('click', (ev) => {
-            ev.preventDefault()
-			if(i%2==0){
-  	        	this.favorite(button)
-			}
-			else{
-				this.unfavorite(button)
-			}
-			i++;
-        })
+        button.addEventListener('click', (_ev) => this.favorite(movie,button))
         return button
     }
 	
@@ -101,6 +97,7 @@ class App{
 		const movie = {
 			name: f.movieName.value,
 			chris: f.chris.value,
+			favorite: false,
 		}
 
 		this.movieList.push(movie)

@@ -77,6 +77,10 @@ form{
 	font-size: 2vw;
 }
 
+.favorite{
+	display: none;
+}
+
 .info{
 	flex: 1;
 }
