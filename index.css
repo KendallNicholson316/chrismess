@@ -90,10 +90,12 @@ form{
 button.close{
 	padding: 1vw 1vw;
 	font-size:3vw;
+	border-radius:25%;
 }
 
 button.fav{
 	text: red;
 	padding: 1vw 1vw;
 	font-size:3vw;
+	border-radius:25%
 }
