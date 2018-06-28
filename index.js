@@ -8,6 +8,21 @@ class App{
 		})	
 	}
 	
+	favorite(button){
+        button.textContent = '🖤'
+    }
+
+    createFavoriteButton(){
+        const button = document.createElement('button')
+        button.classList.add('fav')
+        button.textContent ='♡'
+        button.addEventListener('click', (ev) => {
+            ev.preventDefault()
+            this.favorite(button)
+        })
+        return button
+    }
+	
 	remove(ev,movie){
 		const item = ev.target.parentElement
 		const i = this.movieList.indexOf(movie)
@@ -59,6 +74,7 @@ class App{
 		const list = document.querySelector('#movies')
 		const item = this.createItem(movie)
 		item.appendChild(this.createRemoveButton(movie))
+		item.appendChild(this.createFavoriteButton())
 		list.appendChild(item)
 		
 		f.reset()

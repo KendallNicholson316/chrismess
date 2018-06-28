@@ -2,11 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Cabin');
 
 h1 {
+	text-align: center;
 	font-family: 'Lato', Helvetica, Arial, sans-serif;
 	font-size: 10vw;
 	margin:0;
+	margin-bottom: 2vw;
 }
 
+form{
+	margin: 0 auto;
+	text-align: center; 
+}
 #movies{
 	list-style: circle;
 	font-size: 4vw;
@@ -29,4 +35,11 @@ h1 {
 .close{
 	position: absolute;
 	right: 0;
+	margin-right: 3vw; 
+}
+
+.fav{
+	position: absolute; 
+	right: 0;
+	
 }
