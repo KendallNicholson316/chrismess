@@ -21,7 +21,12 @@ h1 {
 
 .chris{
 	font-family: 'Cabin', Helvetica, Arial, sans-serif;
-	display: block;
+	
 	font-size: 2vw;
 	margin: 0;
+}
+
+.close{
+	position: absolute;
+	right: 0;
 }

@@ -7,11 +7,28 @@ class App{
 			this.updateMovieList(ev)
 		})	
 	}
+	
+	remove(ev){
+		const item = ev.target.parentElement
+	//	const item = document.querySelector(movie)
+		item.parentElement.removeChild(item)
+	}
+
+	createRemoveButton(){
+		const button = document.createElement('button')
+        button.classList.add('close')
+        button.textContent ='🗑️'
+		button.addEventListener('click', (ev) => {
+            ev.preventDefault()
+            this.remove(ev)
+        })
+		return button
+	}
 
 	createSpan(name, value){
 		const span = document.createElement('span')
 		span.classList.add(name)
-		span.textContent = value
+		span.textContent = value		
 		return span
 	}
 	createItem(movie){
@@ -20,10 +37,9 @@ class App{
 
 		const keys = Object.keys(movie)
 		
-		keys.forEach((keyName) => {
-			const span = this.createSpan(keyName, movie[keyName])
-			item.appendChild(span)
-		})
+		keys.forEach((keyName) => {	
+			item.appendChild(this.createSpan(keyName, movie[keyName]))
+		})	
 		
 		return item;
 	}
@@ -39,9 +55,10 @@ class App{
 		this.movieList.push(movie)
 
 		const list = document.querySelector('#movies')
-		list.appendChild(this.createItem(movie))
+		const item = this.createItem(movie)
+		item.appendChild(this.createRemoveButton())
+		list.appendChild(item)
 		
-
 		f.reset()
 		f.movieName.focus()
 	}
