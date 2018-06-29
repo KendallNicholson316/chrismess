@@ -2,13 +2,24 @@ class App{
 	constructor(){
 		this.list = document.querySelector('#movies')
 		this.movieList = []
-
+		this.load()
 		
 		const form = document.querySelector('form#movieForm')
 		form.addEventListener('submit', (ev) => {
 			ev.preventDefault()
 			this.handleSubmit(ev)
 		})	
+	}
+
+	save() {
+		localStorage.setItem('movieList', JSON.stringify(this.movieList))
+	}
+
+	load() {
+    	const movieList = JSON.parse(localStorage.getItem('movieList'))
+		if (movieList) {
+    		movieList.forEach(movie => this.addMovie(movie))
+		}
 	}
 	
 	favorite(movie,button){
@@ -19,6 +30,7 @@ class App{
 			button.textContent ='♡'
 		}
 		movie.favorite = !movie.favorite
+		this.save()
     }
 	
 	createUtilities(movie, item){
@@ -44,6 +56,7 @@ class App{
 		this.list.removeChild(item)
 		const i = this.movieList.indexOf(movie)
         this.movieList.splice(i,1)
+		this.save()
 	}
 
 	createRemoveButton(movie, item){
@@ -87,6 +100,18 @@ class App{
 		return item;
 	}
 
+	addMovie(movie){
+		this.movieList.push(movie)
+
+		const item = this.createItem(movie)
+
+		if(movie.favorite){
+			item.classList.add('fav')
+		}
+
+		this.list.appendChild(item)
+	}
+
 	handleSubmit(ev) {	
 		const f = ev.target
 		
@@ -95,12 +120,12 @@ class App{
 			chris: f.chris.value,
 			favorite: false,
 		}
+		this.addMovie(movie)
+		//this.movieList.push(movie)
 
-		this.movieList.push(movie)
-
-		const item = this.createItem(movie)
-		this.list.appendChild(item)
-		
+		//const item = this.createItem(movie)
+		//this.list.appendChild(item)
+		this.save()		
 		f.reset()
 		f.movieName.focus()
 	}
